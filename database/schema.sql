@@ -1,8 +1,3 @@
--- ============================================================================
--- FORTIS ATM SYSTEM - DATABASE SCHEMA
--- Industry-Level Banking Database with Triggers, Procedures, and Indexing
--- ============================================================================
-
 -- Drop existing database if exists
 DROP DATABASE IF EXISTS fortis_atm;
 CREATE DATABASE fortis_atm;
@@ -225,16 +220,13 @@ BEGIN
     DECLARE v_account_status VARCHAR(20);
     DECLARE v_new_balance DECIMAL(15,2);
     
-    -- Start transaction
     START TRANSACTION;
     
-    -- Get account details
     SELECT balance, daily_withdrawn, daily_limit, status
     INTO v_balance, v_daily_withdrawn, v_daily_limit, v_account_status
     FROM accounts
     WHERE id = p_account_id
     FOR UPDATE;
-    
     -- Check account status
     IF v_account_status != 'ACTIVE' THEN
         SET p_status = 'FAILED';

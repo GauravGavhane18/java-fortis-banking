@@ -188,14 +188,5 @@ ORDER BY a.id;
 --   Username: admin
 --   PIN: 1234
 --   Account: ACC1001
---
--- Customer 1:
---   Username: john_doe
---   PIN: 5678
---   Accounts: ACC1002 (Savings), ACC1003 (Current)
---
--- Customer 2:
---   Username: jane_smith
---   PIN: 9012
---   Account: ACC1004 (Current)
+
 -- =====================
